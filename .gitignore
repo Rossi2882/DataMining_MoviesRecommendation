@@ -1,2 +1,3 @@
 echo "data/ratings.csv" >> .gitignore
 git add .gitignore
+git --version
