@@ -1,10 +1,10 @@
-# System rekomendacji filmów na podstawie analizy danych
+# Movie Recommendation System Based on Data Analysis
 
-Projekt stworzony w ramach przedmiotu **Eksploracja Danych**. Celem było opracowanie prostego, ale wieloaspektowego systemu rekomendacji filmów, bazującego na danych z ocen użytkowników i opisów gatunków filmowych.
+Project created for the **Data Mining** course. The goal was to develop a simple yet multi-faceted movie recommendation system based on user ratings and movie genre descriptions.
 
-## Zawartość repozytorium
+## Repository Contents
 
-├── data/ # Pliki z danymi wejściowymi (.csv)
+├── data/ # Input data files (.csv)
 │ ├── movies.csv
 │ └── ratings.csv
 ├── src/
@@ -12,47 +12,47 @@ Projekt stworzony w ramach przedmiotu **Eksploracja Danych**. Celem było opraco
 ├── .gitignore
 ├── README.md
 
-## Dane
+## Data
 
-Dane pochodzą z zestawu **MovieLens** i zawierają:
-- `movies.csv` — lista filmów z tytułami i gatunkami
-- `ratings.csv` — oceny wystawione przez użytkowników (skala 0.5–5.0)
+The data comes from the **MovieLens** dataset and includes:
+- `movies.csv` — list of movies with titles and genres
+- `ratings.csv` — ratings given by users (scale 0.5–5.0)
 
-##  Co robi projekt?
+## What does the project do?
 
-Projekt implementuje kilka kroków analizy danych i rekomendacji:
+The project implements several steps of data analysis and recommendation:
 
-###  Wstępna analiza:
-- Filtrowanie aktywnych użytkowników (minimum 100 ocen)
-- Statystyki liczby ocen na film/użytkownika
-- Przekształcenie gatunków filmowych z użyciem TF-IDF
+### Preliminary Analysis:
+- Filtering active users (minimum 100 ratings)
+- Statistics on the number of ratings per movie/user
+- Transformation of movie genres using TF-IDF
 
-###  Predykcja ukrytej oceny:
-- Ukrycie jednej losowej oceny użytkownika
-- Predykcja oceny na podstawie podobieństwa gatunków filmów
-- Obliczenie błędu MAE i jego przedziału ufności
-- Permutacyjny test statystyczny porównujący model z losowym zgadywaniem
+### Hidden Rating Prediction:
+- Hiding one random user rating
+- Rating prediction based on movie genre similarity
+- Calculation of the MAE (Mean Absolute Error) and its confidence interval
+- Permutation statistical test comparing the model with random guessing
 
-###  Analiza ulubionych gatunków:
-- Wykrywanie najlepiej ocenianych gatunków przez użytkownika
-- Histogramy średnich ocen gatunków dla 10 losowych użytkowników
+### Favorite Genres Analysis:
+- Detecting a user's highest-rated genres
+- Histograms of average genre ratings for 10 random users
 
-###  Rekomendacje:
-- Polecanie filmów z ulubionych gatunków użytkownika
-- Filtrowanie według średniej oceny i liczby ocen
-- Ewaluacja za pomocą **Hit Rate@500**
+### Recommendations:
+- Recommending movies from the user's favorite genres
+- Filtering by average rating and number of ratings
+- Evaluation using **Hit Rate@500**
 
-##  Przykładowe metryki
+## Example Metrics
 
-- MAE (średni błąd bezwzględny): ~0.60–0.75
+- MAE (Mean Absolute Error): ~0.60–0.75
 - Hit Rate@500: ~0.20–0.35
-- Permutacyjny test wskazuje, że model zwykle wypada lepiej niż losowe przewidywanie
+- Permutation test indicates that the model usually performs better than random guessing
 
-## ▶️ Jak uruchomić?
+## ▶️ How to run?
 
-1. Umieść pliki `movies.csv` i `ratings.csv` w katalogu `data/`
-2. Przejdź do folderu `src/`
-3. Uruchom:
+1. Place the `movies.csv` and `ratings.csv` files in the `data/` directory
+2. Navigate to the `src/` folder
+3. Run:
 
 ```bash
 python MoviesRecommendation.py
